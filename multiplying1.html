@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>multiplying</title>
+        <center>
+        <h1>Multiplication</h1>
+        </center>
+        <style>
+            body{background-color: aqua;
+                 color: lime;
+                 font-size: x-large;
+                 font-style: oblique;
+                 font-family: fantasy;
+                 font-weight: 300;
+            }
+        </style>
+<script language="javascript" type="text/javascript">
+function multiply(){
+    a=Number(document.calculator.number1.value);
+    b=Number(document.calculator.number2.value);
+    c=a*b;
+    document.calculator.total.value=c;
+}
+</script>
+</head>
+<body>
+<form name="calculator">
+    <center>
+ <input type="text" name="number1">
+ <input type="text" name="number2">
+ <input type="text" name="total">
+<input type="button" value="MUL" onclick="javascript:multiply();">
+    </center>
+</form>
+</body>
+</html>
