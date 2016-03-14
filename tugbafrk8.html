@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    </head>
+    <body>
+            <form>
+                <input type="text" id="input1"/>
+                <select id="operator">
+                    <option value="+">+</option>
+                    <option value="*">*</option>
+                    <option value="-">-</option>
+                    <option value="/">/</option>
+                </select>
+                <input type="text" id="input2"/>
+                <input type="button" id="calc" value="calc" onclick="calculate();"/>
+                <input type="text" id="output" disabled>
+                
+            </form>
+        <div id="error">
+        </div>
+        <script>
+            var in1=2;
+            var in2=3;
+                function calculate(){
+                in1 = parseInt($('#input1').val());
+                in2 = parseInt($('#input2').val());
+                if(checkInput(in1,in2)){
+                    var res = eval(in1+$('#operator').val()+in2);
+                    $('#output').val(res);
+                }else{
+                    $('#error').html("<p>Error</p>");
+                }
+                
+            }
+            function checkInput(in1,in2){
+                if(isNaN(in1) && isNaN(in2)){
+                    return false;
+                }else if(isNaN(in1) || isNaN(in2)){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+            </script>
+            
+    </body>
+</html>
